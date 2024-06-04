@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-package example.dummy;
-
-message Dummy {
-
-}
