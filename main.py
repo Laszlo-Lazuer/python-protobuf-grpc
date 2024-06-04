@@ -2,6 +2,7 @@ import proto.simple_pb2 as simple_pb2
 import proto.complex_pb2 as complex_pb2
 import proto.enumerations_pb2 as enumerations_pb2
 import proto.oneofs_pb2 as oneofs_pb2
+import proto.maps_pb2 as maps_pb2
 
 def simple():
     return simple_pb2.Simple(
@@ -34,8 +35,17 @@ def oneofs():
     message.id = 42 # setting multiple times it will clear prior values
     print(message)
 
+def maps():
+    message = maps_pb2.MapExample();
+    message.ids["myid"].id = 42
+    message.ids["myid2"].id = 43
+    message.ids["myid3"].id = 44
+    print(message)
+
+
 if __name__ == '__main__':
     # print(simple())
     # print(complex())
     # print(enums())
-    print(oneofs())
+    # print(oneofs())
+    print(maps())
