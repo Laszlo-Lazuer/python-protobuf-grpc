@@ -1,5 +1,6 @@
 import proto.simple_pb2 as simple_pb2
 import proto.complex_pb2 as complex_pb2
+import proto.enumerations_pb2 as enumerations_pb2
 
 def simple():
     return simple_pb2.Simple(
@@ -18,7 +19,14 @@ def complex():
     message.multiple_dummies.add(id=45, name="My name 4")
     return message
 
+def enums():
+    return enumerations_pb2.Enumaration(
+        eye_color=enumerations_pb2.EYE_COLOR_GREEN
+        # eye_color=1 # could be by ordinal number but not readable
+    )
+
 
 if __name__ == '__main__':
     # print(simple())
-    print(complex())
+    # print(complex())
+    print(enums())
