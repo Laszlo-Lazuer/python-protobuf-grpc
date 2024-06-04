@@ -1,6 +1,7 @@
 import proto.simple_pb2 as simple_pb2
 import proto.complex_pb2 as complex_pb2
 import proto.enumerations_pb2 as enumerations_pb2
+import proto.oneofs_pb2 as oneofs_pb2
 
 def simple():
     return simple_pb2.Simple(
@@ -25,8 +26,16 @@ def enums():
         # eye_color=1 # could be by ordinal number but not readable
     )
 
+def oneofs():
+    # print element inside object
+    message = oneofs_pb2.Result(message="a message")
+    print(message)
+
+    message.id = 42 # setting multiple times it will clear prior values
+    print(message)
 
 if __name__ == '__main__':
     # print(simple())
     # print(complex())
-    print(enums())
+    # print(enums())
+    print(oneofs())
