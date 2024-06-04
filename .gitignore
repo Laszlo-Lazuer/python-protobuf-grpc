@@ -1,2 +1,3 @@
 venv
 .vscode
+proto/__pycache__
